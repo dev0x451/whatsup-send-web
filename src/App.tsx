@@ -49,16 +49,17 @@ function App() {
   return (
     <>
       <img src={whatsAppLogo} width="100px" height="100px" />
+      <div>
+        <input className="input" type="text" onChange={onChange} />
 
-      <input type="text" onChange={onChange} />
-
-      <a target="_blank" href={`${BASE_URL}${phone}`}></a>
-      <button onClick={saveToLocal} className="">
-        Послать через WhatsApp
-      </button>
-      <button onClick={clearLocal} className="">
-        Очистить
-      </button>
+        <a target="_blank" href={`${BASE_URL}${phone}`}></a>
+        <button onClick={saveToLocal} className="">
+          Послать через WhatsApp
+        </button>
+        <button onClick={clearLocal} className="">
+          Очистить
+        </button>
+      </div>
 
       <ul>{localPhones.map((item, i) => LocalStoredPhone(item, i))}</ul>
     </>
